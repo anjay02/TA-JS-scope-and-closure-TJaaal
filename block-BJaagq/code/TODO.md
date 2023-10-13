@@ -18,7 +18,7 @@ console.log(species); // 2
 ```
 
 <!-- Put your image below -->
-
+![](./img/img.png)
 ![](./img/image-name.jpg)
 
 - Create the execution context diagram
@@ -46,7 +46,7 @@ topLevelFn();
 ```
 
 <!-- Put your image below -->
-
+![](./img/img1.png)
 ![](./img/image-name.jpg)
 
 - Create the execution context diagram
@@ -77,7 +77,7 @@ console.log(one, two, three, four); // 5
 ```
 
 <!-- Put your image below -->
-
+![](./img/img2.png)
 ![](./img/image-name.jpg)
 
 - Create the execution context diagram
