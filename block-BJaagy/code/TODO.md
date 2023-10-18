@@ -1,6 +1,22 @@
 1. Create a function by your choice that accepts a callback function.
 
+function name (firstName, lastName, cb){
+  let fullName = firstName + " " + lastName;
+  return cb(fullName);
+}
+
+name("rahul", "raushan", function(name){
+  return console.log(`You are ${name}`)
+});
+
 2. Create a function by you choice that returns a function reference.
+
+function addTwoNumbers(numA , numB){
+  function add(a, b){
+  return a + b;
+  }
+  return add;
+}
 
 3. Create a higher order function called `map` that takes two inputs:
    - An array of numbers/string/boolean etc
@@ -9,9 +25,13 @@
 Have `map` return a new array filled with values that are the result of the 'callback' function on each element of the input array.
 
 ```js
-// Your code goes here
-
-// Test Your Code
+ function map(arr, cb){
+  let newArray = [];
+  for(let i = 0; i<arr.length; i++ ){
+    newArray.push(cb(arr[i]))
+  }
+  return newArray;
+}
 function multiplyByTwo(n) {
   return n * 2;
 }
@@ -23,7 +43,11 @@ multiplyByTwo(2); //-> 4
 4. Create a higher-order function called `forEach` taht takes an array and a callback, and runs the callback on each element of the array. `forEach` does not return anything.
 
 ```js
-// Your code goes here
+ function forEach(arr, callback) {
+  for (let i = 0; i < arr.length; i++) {
+    callback(arr[i]);
+  }
+}
 
 // Test Your Code
 let alphabet = '';
@@ -38,7 +62,15 @@ console.log(alphabet); //prints 'abcd'
 
 ```js
 // Test Your Code
-
+function filter(arr, cb) {
+    let newArr = [];
+    for (let i = 0; i < arr.length; i++) {
+        if (cb(arr[i])) {
+            newArr.push(arr[i]);
+        }
+    }
+    return newArr;
+}
 var numbers = [1, 3, 5, 4, 7, 89, 234, 20];
 let even = filter(numbers, function (n) {
   return n % 2 === 0;
