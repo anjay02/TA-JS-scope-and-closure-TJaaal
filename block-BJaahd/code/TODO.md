@@ -1,0 +1,68 @@
+Create the execution context diagram for following code. What will be the output in each line of code
+
+```js
+function getCounter() {
+  let privateCounter = 0;
+  function changeBy(val) {
+    privateCounter += val;
+  }
+  return {
+    increment: function () {
+      changeBy(1);
+    },
+    decrement: function () {
+      changeBy(-1);
+    },
+    value: function () {
+      return privateCounter;
+    },
+  };
+};
+
+let counter = getCounter()
+
+counter.value();  // output: 0
+counter.increment(); // output: undefine
+counter.increment(); // output: undefine
+counter.value(); // output: 2
+counter.decrement(); // output: undefine
+counter.value(); // output: 1
+```
+![](./img/sc1.jpeg)
+2. Create the execution context diagram and write the output.
+
+```js
+function makeCounter() {
+  let privateCounter = 0;
+  function changeBy(val) {
+    privateCounter += val;
+  }
+  return {
+    increment: function() {
+      changeBy(1);
+    },
+
+    decrement: function() {
+      changeBy(-1);
+    },
+
+    value: function() {
+      return privateCounter;
+    }
+  }
+};
+
+let counter1 = makeCounter();
+let counter2 = makeCounter();
+
+console.log(counter1.value());  // OUTPUT: 0
+
+counter1.increment();//undefine
+counter1.increment(); // undefine
+console.log(counter1.value()); // OUTPUT: 2
+
+counter1.decrement(); // udefine
+console.log(counter1.value()); // OUTPUT: 1
+console.log(counter2.value()); // OUTPUT :0
+```
+![](./img/sc2.jpeg)
